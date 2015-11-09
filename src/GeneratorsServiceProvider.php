@@ -6,6 +6,14 @@ use Illuminate\Support\ServiceProvider;
 
 class GeneratorsServiceProvider extends ServiceProvider
 {
+
+    /**
+     * Indicates if loading of the provider is deferred.
+     *
+     * @var bool
+     */
+    protected $defer = false;
+    
     /**
      * Bootstrap the application services.
      *
@@ -13,7 +21,8 @@ class GeneratorsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->bootConfig();
+        $this->registerAlias();
     }
 
     /**
@@ -45,6 +54,27 @@ class GeneratorsServiceProvider extends ServiceProvider
     public function provides()
     {
         return ['logik'];
+    }
+
+    /**
+     * Set config file for package
+     */
+    protected function bootConfig()
+    {
+        $path = __DIR__ . '/../config/settings.php';
+        $this->publishes([$path => config_path('settings.php')]);
+        $this->mergeConfigFrom($path, 'settings');
+    }
+
+    /**
+     * @param $alias boolean
+     */
+    private function registerAlias()
+    {
+        // if ($alias === true) {
+            $loader = \Illuminate\Foundation\AliasLoader::getInstance();
+            $loader->alias('Logik', LogikFacade::class);
+        // }
     }
 
 }

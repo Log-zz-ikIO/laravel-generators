@@ -1,8 +1,6 @@
 <?php
 namespace LogikIO\Generators;
 
-use Detection\MobileDetect;
-
 class Logik
 {
     /**
@@ -11,12 +9,6 @@ class Logik
      * @var \Illuminate\Contracts\Foundation\Application
      */
     protected $app;
-    /**
-     * The MobileDetect instance.
-     *
-     * @var MobileDetect
-     */
-    protected $detect;
 
     /**
      * Route info.
@@ -43,5 +35,9 @@ class Logik
         $this->config = $this->app->config;
     }
 
+    public function logik()
+    {
+        echo 'LogikIO';
+    }
 
 }

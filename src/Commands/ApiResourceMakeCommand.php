@@ -19,7 +19,7 @@ class ApiResourceMakeCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'make:api-resource {name} {--schema=} {--softdeletes}';
+    protected $signature = 'make:logik-api {name} {--schema=} {--softdeletes}';
     
     /**
      * The console command description.
