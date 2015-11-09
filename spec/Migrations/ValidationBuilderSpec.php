@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\Smiarowski\Generators\Migrations;
+namespace spec\LogikIO\Generators\Migrations;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -10,7 +10,7 @@ class ValidationBuilderSpec extends ObjectBehavior
     function let()
     {
         $this->beConstructedWith('table_test');
-        $this->shouldHaveType('Smiarowski\Generators\Migrations\ValidationBuilder');
+        $this->shouldHaveType('LogikIO\Generators\Migrations\ValidationBuilder');
     }
 
     function it_should_find_proper_validation_rules()

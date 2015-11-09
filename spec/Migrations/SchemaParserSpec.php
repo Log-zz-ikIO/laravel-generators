@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\Smiarowski\Generators\Migrations;
+namespace spec\LogikIO\Generators\Migrations;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -9,7 +9,7 @@ class SchemaParserSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Smiarowski\Generators\Migrations\SchemaParser');
+        $this->shouldHaveType('LogikIO\Generators\Migrations\SchemaParser');
     }
 
     function it_parses_one_field_schema()
@@ -61,6 +61,6 @@ class SchemaParserSpec extends ObjectBehavior
 
     function it_should_not_allow_wrong_types_in_schema()
     {
-        $this->shouldThrow('Smiarowski\Generators\Exceptions\UnsupportedColumnTypeException')->duringParse('wrong_name:wrong_type');
+        $this->shouldThrow('LogikIO\Generators\Exceptions\UnsupportedColumnTypeException')->duringParse('wrong_name:wrong_type');
     }
 }

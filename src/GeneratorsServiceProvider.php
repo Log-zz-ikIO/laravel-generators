@@ -31,11 +31,20 @@ class GeneratorsServiceProvider extends ServiceProvider
      */
     private function registerGenerator()
     {
-        $this->app->singleton('command.smiarowski.make', function ($app) {
+        $this->app->singleton('command.logikio.make', function ($app) {
             return $app['LogikIO\Generators\Commands\ApiResourceMakeCommand'];
         });
 
-        $this->commands('command.smiarowski.make');
+        $this->app->singleton('logik', function ($app) {
+            return new Logik($app);
+        });
+
+        $this->commands('command.logikio.make');
+    }
+
+    public function provides()
+    {
+        return ['logik'];
     }
 
 }

@@ -1,5 +1,5 @@
 {
-    "name": "logikio/logik-gen",
+    "name": "logikio/logik-generators",
     "description": "Laravel 5 API reasource generator.",
     "keywords": ["laravel", "generators", "REST", "API"],
     "license": "MIT",
