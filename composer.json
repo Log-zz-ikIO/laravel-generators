@@ -1,0 +1,23 @@
+{
+    "name": "logikio/logik-gen",
+    "description": "Laravel 5 API reasource generator.",
+    "keywords": ["laravel", "generators", "REST", "API"],
+    "license": "MIT",
+    "homepage": "https://github.com/logikio/laravel-generators",
+    "require": {
+        "php": ">=5.5.0",
+        "laravel/framework": "^5.1"
+    },
+    "authors": [{
+        "name": "LogikIO",
+        "email": "admin@logik.io"
+    }],
+    "autoload": {
+        "psr-4": {
+            "LogikIO\\Generators\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpspec/phpspec": "~2.1"
+    }
+}
