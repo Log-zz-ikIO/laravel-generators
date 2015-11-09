@@ -1,6 +1,8 @@
 <?php
 namespace LogikIO\Generators;
 
+use Log;
+
 class Logik
 {
     /**
@@ -33,6 +35,9 @@ class Logik
         // $this->config
         $this->app = $app;
         $this->config = $this->app->config;
+
+        dump($this->app->session->put('logik', 'LogikIO'));
+        Log::debug( json_encode($this->app->session->all()) );
     }
 
     public function logik()

@@ -12,7 +12,7 @@ class GeneratorsServiceProvider extends ServiceProvider
      *
      * @var bool
      */
-    protected $defer = false;
+    protected $defer = true;
     
     /**
      * Bootstrap the application services.
@@ -61,9 +61,9 @@ class GeneratorsServiceProvider extends ServiceProvider
      */
     protected function bootConfig()
     {
-        $path = __DIR__ . '/../config/settings.php';
-        $this->publishes([$path => config_path('settings.php')]);
-        $this->mergeConfigFrom($path, 'settings');
+        $path = __DIR__ . '/../config/logik.php';
+        $this->publishes([$path => config_path('logik.php')]);
+        $this->mergeConfigFrom($path, 'logik');
     }
 
     /**
